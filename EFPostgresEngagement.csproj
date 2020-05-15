@@ -4,13 +4,16 @@
         <TargetFramework>netstandard2.1</TargetFramework>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageId>EFPostgresEngagement</PackageId>
-        <Title>Entity Framework and Postgres engagement</Title>
+        <Title>EFPostgresEngagement</Title>
         <Authors>Hieu Tran</Authors>
         <PackageProjectUrl>https://github.com/hieutran3010/EFPostgresEngagement</PackageProjectUrl>
         <RepositoryUrl>https://github.com/hieutran3010/EFPostgresEngagement</RepositoryUrl>
         <RepositoryType>Github</RepositoryType>
         <PackageTags>Entity Framework, Postgres Net</PackageTags>
         <RootNamespace>EFPostgresEngagement</RootNamespace>
+        <PackageLicense>https://github.com/hieutran3010/EFPostgresEngagement</PackageLicense>
+        <Description>This package helps integrating between Entity Framework and PostgreSQL. In other hand, it provides some common interfaces that would be help for CRUD such as IUnitOfWork, IRepository, just do a little code and let's start.</Description>
+        <Copyright>Hieu Tran</Copyright>
     </PropertyGroup>
 
     <ItemGroup>
