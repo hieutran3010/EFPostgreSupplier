@@ -1,4 +1,4 @@
-﻿namespace EFPostgreSupplier.ValidationAttributes
+﻿namespace EFPostgresEngagement.ValidationAttributes
 {
     using System;
 

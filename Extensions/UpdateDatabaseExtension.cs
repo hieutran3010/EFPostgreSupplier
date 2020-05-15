@@ -1,4 +1,4 @@
-﻿namespace EFPostgreSupplier.Extensions
+﻿namespace EFPostgresEngagement.Extensions
 {
     using DbContextBase;
     using Microsoft.AspNetCore.Builder;

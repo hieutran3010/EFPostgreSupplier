@@ -1,4 +1,4 @@
-namespace EFPostgreSupplier.DataAnnotationAttributes
+namespace EFPostgresEngagement.DataAnnotationAttributes
 {
     using System;
 

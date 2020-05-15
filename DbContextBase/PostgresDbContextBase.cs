@@ -1,4 +1,4 @@
-﻿namespace EFPostgreSupplier.DbContextBase
+﻿namespace EFPostgresEngagement.DbContextBase
 {
     using System;
     using System.ComponentModel;

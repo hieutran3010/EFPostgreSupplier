@@ -1,4 +1,4 @@
-﻿namespace EFPostgreSupplier
+﻿namespace EFPostgresEngagement
 {
     using System;
     using System.Collections.Generic;

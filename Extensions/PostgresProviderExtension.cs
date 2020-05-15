@@ -1,4 +1,4 @@
-﻿namespace EFPostgreSupplier.Extensions
+﻿namespace EFPostgresEngagement.Extensions
 {
     using System;
     using DbContextBase;

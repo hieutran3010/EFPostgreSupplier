@@ -1,4 +1,4 @@
-﻿namespace EFPostgreSupplier.Abstract
+﻿namespace EFPostgresEngagement.Abstract
 {
     public interface IDbTracker
     {
