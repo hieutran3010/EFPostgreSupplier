@@ -37,7 +37,7 @@ CONNECTION_STRING: '....'
     public class Repository<TEntity> : RepositoryBase<TEntity, MyDataDbContext>
         where TEntity : class, IEntityBase, new()
     {
-        public Repository(AirReturnDbContext dbContext) : base(dbContext)
+        public Repository(MyDataDbContext dbContext) : base(dbContext)
         {
         }
     }
@@ -59,10 +59,12 @@ CONNECTION_STRING: '....'
   - Finally, registering all services in StartUp file
 ```c#
     services
-        .UsePostgresSql<AirReturnDbContext>(this.Configuration)
+        .UsePostgresSql<MyDataDbContext>(this.Configuration)
         .AddTransient<IUnitOfWork, UnitOfWork>();
     services.AddScoped<IDbTracker>(provider => new ApplicationUserProvider());
 ```
+  -  Ok, just inject IUnitOfWork wherever you want to interact with database.
+  
 *Note: IDbTracker helps to track the owner of data modification. In the near future, it will be optional. Temporarily for now, please implement a class to pass this requirement* 
 
 ### An example project is implementing. Please watch for new update.
