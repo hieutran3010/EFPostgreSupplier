@@ -32,6 +32,21 @@ CONNECTION_STRING: '....'
         }
     }
 ```
+  - Create a DbContext factory for migration --optional
+```c#
+public class MyDbContextFactory : IDesignTimeDbContextFactory<MyDbContext>
+    {
+        public MyDbContext CreateDbContext(string[] args)
+        {
+            var connection = Environment.GetEnvironmentVariable("CONNECTION_STRING");
+            
+            var optionsBuilder = new DbContextOptionsBuilder<MyDbContext>();
+            optionsBuilder.UseNpgsql(connection ?? <connection-string>");
+
+            return new MyDbContext(optionsBuilder.Options, null);
+        }
+    }
+```
   - Create class Repository and let's it inherits RepostoryBase
 ```c#
     public class Repository<TEntity> : RepositoryBase<TEntity, MyDataDbContext>
