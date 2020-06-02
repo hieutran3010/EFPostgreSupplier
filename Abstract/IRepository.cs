@@ -7,7 +7,6 @@ namespace EFPostgresEngagement.Abstract
     using System.Threading.Tasks;
 
     public interface IRepository<T>
-        where T : class, IEntityBase, new()
     {
         IQueryable<T> GetQueryable(bool asNoTracking = true);
         

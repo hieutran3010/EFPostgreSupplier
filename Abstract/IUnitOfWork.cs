@@ -6,16 +6,16 @@ namespace EFPostgresEngagement.Abstract
 
     public interface IUnitOfWork : IDisposable
     {
-        IRepository<T> GetRepository<T>() where T : class, IEntityBase, new();
-        
+        IRepository<T> GetRepository<T>() where T : class, new();
+
         Task BeginTransactionAsync(CancellationToken cancellationToken = default);
 
         void CommitTransaction();
 
         void RollbackTransaction();
-        
+
         Task<int> SaveChangesAsync(bool acceptAllChangesOnSuccess, CancellationToken cancellationToken = default);
-        
+
         Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
     }
 }

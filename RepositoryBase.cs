@@ -10,8 +10,8 @@
     using Microsoft.EntityFrameworkCore;
 
     public abstract class RepositoryBase<TEntity, TDbContext> : IRepository<TEntity>
-        where TEntity : class, IEntityBase, new()
-        where TDbContext: PostgresDbContextBase<TDbContext>
+        where TEntity : class, new()
+        where TDbContext : PostgresDbContextBase<TDbContext>
     {
         protected readonly TDbContext DbContext;
 

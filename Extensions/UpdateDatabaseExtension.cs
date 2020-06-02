@@ -13,7 +13,7 @@
         {
             using var serviceScope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope();
             using var context = serviceScope.ServiceProvider.GetService<TDbContext>();
-            context.Database.Migrate();
+            context.Database.MigrateAsync();
         }
     }
 }

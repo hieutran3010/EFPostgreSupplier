@@ -15,7 +15,7 @@
             this.DbContext = dbContext;
         }
 
-        public abstract IRepository<T> GetRepository<T>() where T : class, IEntityBase, new();
+        public abstract IRepository<T> GetRepository<T>() where T : class, new();
 
         public async Task BeginTransactionAsync(CancellationToken cancellationToken = default)
         {
