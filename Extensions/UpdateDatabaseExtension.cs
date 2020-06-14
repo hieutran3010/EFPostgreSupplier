@@ -4,7 +4,6 @@
     using Microsoft.AspNetCore.Builder;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.DependencyInjection;
-    using Npgsql;
 
     public static class UpdateDatabaseExtension
     {
@@ -13,7 +12,7 @@
         {
             using var serviceScope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope();
             using var context = serviceScope.ServiceProvider.GetService<TDbContext>();
-            context.Database.MigrateAsync();
+            context.Database.Migrate();
         }
     }
 }
