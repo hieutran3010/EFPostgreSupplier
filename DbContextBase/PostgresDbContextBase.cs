@@ -26,6 +26,7 @@
         
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            this.OnExtendModelCreating(modelBuilder);
             foreach (var entityType in Assembly.GetExecutingAssembly().ExportedTypes
                 .Where(o => o.BaseType == typeof(IEntityBase) && o.IsClass && !o.IsAbstract))
             {
@@ -57,6 +58,11 @@
             }
 
             base.OnModelCreating(modelBuilder);
+        }
+
+        public virtual void OnExtendModelCreating(ModelBuilder modelBuilder)
+        {
+            // do nothing
         }
         
         public override int SaveChanges()
