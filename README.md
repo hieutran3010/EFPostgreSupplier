@@ -50,7 +50,7 @@ public class MyDbContextFactory : IDesignTimeDbContextFactory<MyDbContext>
   - Create class Repository and let's it inherits RepostoryBase
 ```c#
     public class Repository<TEntity> : RepositoryBase<TEntity, MyDataDbContext>
-        where TEntity : class, IEntityBase, new()
+        where TEntity : class, new()
     {
         public Repository(MyDataDbContext dbContext) : base(dbContext)
         {
