@@ -14,7 +14,7 @@
         <PackageLicense>https://github.com/hieutran3010/EFPostgresEngagement</PackageLicense>
         <Description>This package helps integrating between Entity Framework and PostgreSQL. In other hand, it provides some common interfaces that would be help for CRUD such as IUnitOfWork, IRepository, just do a little code and let's start.</Description>
         <Copyright>Hieu Tran</Copyright>
-        <PackageVersion>1.0.6</PackageVersion>
+        <PackageVersion>1.0.7</PackageVersion>
         <AssemblyVersion>1.0.5</AssemblyVersion>
         <FileVersion>1.0.5</FileVersion>
         <NeutralLanguage>en</NeutralLanguage>
@@ -27,8 +27,8 @@
     </PropertyGroup>
     <ItemGroup>
       <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
-      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.8" />
-      <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="3.1.8" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.10" />
+      <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="3.1.10" />
       <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="3.1.4" />
     </ItemGroup>
 
