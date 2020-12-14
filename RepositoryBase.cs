@@ -27,24 +27,29 @@
                 : this.DbContext.Set<TEntity>();
         }
 
-        public async Task<TEntity> FindAsync(Guid id)
+        public Task<TEntity> FindAsync(Guid id)
         {
-            return await this.DbContext.Set<TEntity>().FindAsync(id);
+            return this.DbContext.Set<TEntity>().FindAsync(id).AsTask();
         }
 
-        public async Task AddAsync(TEntity entity, CancellationToken cancellationToken = default)
+        public Task AddAsync(TEntity entity, CancellationToken cancellationToken = default)
         {
-            await this.DbContext.Set<TEntity>().AddAsync(entity, cancellationToken);
+            return this.DbContext.Set<TEntity>().AddAsync(entity, cancellationToken).AsTask();
         }
 
-        public async Task AddRangeAsync(IEnumerable<TEntity> entities, CancellationToken cancellationToken = default)
+        public Task AddRangeAsync(IEnumerable<TEntity> entities, CancellationToken cancellationToken = default)
         {
-            await this.DbContext.Set<TEntity>().AddRangeAsync(entities, cancellationToken);
+            return this.DbContext.Set<TEntity>().AddRangeAsync(entities, cancellationToken);
         }
 
-        public async Task AddRangeAsync(params TEntity[] entities)
+        public Task AddRangeAsync(params TEntity[] entities)
         {
-            await this.DbContext.Set<TEntity>().AddRangeAsync(entities);
+            return this.DbContext.Set<TEntity>().AddRangeAsync(entities);
+        }
+
+        public Task<int> ExecuteSqlRawAsync(string sql)
+        {
+            return this.DbContext.Database.ExecuteSqlRawAsync(sql);
         }
 
         public IQueryable<TEntity> GetByRawSql(string sql)
