@@ -11,7 +11,6 @@
     using DataAnnotationAttributes;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore.Infrastructure;
-    using Microsoft.EntityFrameworkCore.Metadata;
 
     public abstract class PostgresDbContextBase<TContext>: DbContext where TContext: DbContext
     {
@@ -41,8 +40,8 @@
             foreach (var entityType in modelBuilder.Model.GetEntityTypes())
             {
                 this.ApplyDataAnnotationAttributesAndColumnTypes(modelBuilder, entityType.ClrType);
-
-                internalModelBuilder.Entity(entityType.Name, ConfigurationSource.Convention)
+                
+                internalModelBuilder.Entity(entityType.Name)
                     .ToTable(entityType.ClrType.Name.ToLowerInvariant());
 
                 entityType.GetProperties().ToList().ForEach(o => o.SetColumnName(o.Name.ToLowerInvariant()));
@@ -54,7 +53,7 @@
                     .ForEach(o => o.SetConstraintName(o.GetConstraintName().ToLowerInvariant()));
 
                 entityType.GetIndexes().ToList()
-                    .ForEach(o => o.SetName(o.GetName().ToLowerInvariant()));
+                    .ForEach(o => o.SetDatabaseName(o.GetDatabaseName().ToLowerInvariant()));
             }
 
             base.OnModelCreating(modelBuilder);
