@@ -1,17 +1,17 @@
-﻿namespace EFPostgresEngagement.DbContextBase
-{
-    using System;
-    using System.ComponentModel;
-    using System.ComponentModel.DataAnnotations;
-    using System.Linq;
-    using System.Reflection;
-    using System.Threading;
-    using System.Threading.Tasks;
-    using Abstract;
-    using DataAnnotationAttributes;
-    using Microsoft.EntityFrameworkCore;
-    using Microsoft.EntityFrameworkCore.Infrastructure;
+﻿using System;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Reflection;
+using System.Threading;
+using System.Threading.Tasks;
+using EFPostgresEngagement.Abstract;
+using EFPostgresEngagement.DataAnnotationAttributes;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 
+namespace EFPostgresEngagement
+{
     public abstract class PostgresDbContextBase<TContext>: DbContext where TContext: DbContext
     {
         protected IDbTracker DbTracker { get; set; }

@@ -6,7 +6,6 @@
     using System.Threading;
     using System.Threading.Tasks;
     using Abstract;
-    using DbContextBase;
     using Microsoft.EntityFrameworkCore;
 
     public abstract class RepositoryBase<TEntity, TDbContext> : IRepository<TEntity>

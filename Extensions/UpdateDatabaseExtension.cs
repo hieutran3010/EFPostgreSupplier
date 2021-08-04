@@ -1,6 +1,5 @@
 ﻿namespace EFPostgresEngagement.Extensions
 {
-    using DbContextBase;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.DependencyInjection;

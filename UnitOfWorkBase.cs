@@ -3,7 +3,6 @@
     using System.Threading;
     using System.Threading.Tasks;
     using Abstract;
-    using DbContextBase;
 
     public abstract class UnitOfWorkBase<TDbContext> : IUnitOfWork
         where TDbContext : PostgresDbContextBase<TDbContext>
